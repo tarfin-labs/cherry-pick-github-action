@@ -1,0 +1,9 @@
+name: 'Cherry-Pick PRs to a Target Branch'
+description: 'Cherry pick PRs to sepcified target branch with a comment'
+author: 'Tarfin Labs'
+branding:
+  icon: "git-pull-request"
+  color: "purple"
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
