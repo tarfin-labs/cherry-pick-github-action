@@ -126,6 +126,6 @@ git cherry-pick $MERGE_COMMIT -m 1 &> /tmp/error.log || (
 git push -u origin $CHERRY_PICK_BRANCH
 
 # create pr from cherry-pick branch to target branch
-gh pr create -B $TARGET_BRANCH -H $CHERRY_PICK_BRANCH --title "Cherry-pick: PR#$PR_NUMBER to $TARGET_BRANCH"
+gh pr create -B $TARGET_BRANCH -H $CHERRY_PICK_BRANCH --title "Cherry-pick: PR#$PR_NUMBER to $TARGET_BRANCH" --body "Cherry-pick: PR#$PR_NUMBER to $TARGET_BRANCH"
 
 gh pr comment $PR_NUMBER --body "🤖 says: cherry pick action finished successfully 🎉!<br/>See: https://github.com/$REPO_NAME/actions/runs/$GITHUB_RUN_ID"
