@@ -2,7 +2,6 @@ name: Cherry Pick On Comment
 on:
   issue_comment:
     types: [created]
-
 jobs:
   cherry-pick:
     name: Cherry Pick
