@@ -128,4 +128,8 @@ git push -u origin $CHERRY_PICK_BRANCH
 # create pr from cherry-pick branch to target branch
 gh pr create -B $TARGET_BRANCH -H $CHERRY_PICK_BRANCH --title "Cherry-pick: PR#$PR_NUMBER to $TARGET_BRANCH" --body "Cherry-pick: PR#$PR_NUMBER to $TARGET_BRANCH"
 
+# Assign the original PR author to the cherry-pick PR
+PR_AUTHOR=$(echo "$pr_resp" | jq -r .user.login)
+gh pr edit $CHERRY_PICK_BRANCH --add-assignee "$PR_AUTHOR"
+
 gh pr comment $PR_NUMBER --body "🤖 says: cherry pick action finished successfully 🎉!<br/>See: https://github.com/$REPO_NAME/actions/runs/$GITHUB_RUN_ID"

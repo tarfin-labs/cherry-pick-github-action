@@ -30,7 +30,6 @@ jobs:
 ```
 
 After installation simply add a comment `/cherry-pick <target_branch>` to the PR you wish to cherry-pick to trigger the action.
-
 ## Changelog
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
